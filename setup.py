@@ -3,7 +3,7 @@
 
 import os
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 ROOT = os.path.abspath(os.path.dirname(__file__))
 
@@ -18,7 +18,7 @@ setup(
     name="pyFAST",
     description="pyFAST",
     long_description=LONG_DESCRIPTION,
-    version=VERSION,
+    # version=VERSION,
     url="https://github.com/openfast/python-toolbox/",
     classifiers=[
         "Topic :: Utilities",
@@ -28,7 +28,7 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Topic :: Software Development :: Version Control :: Git",
     ],
-    packages=["pyFAST"],
+    packages=find_packages(include=["pyFAST", "pyFAST.*"]),
     python_requires=">=3.6",
     install_requires=[
         "matplotlib",
